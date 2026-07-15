@@ -3,52 +3,100 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<meta name="theme-color" content="#140810" />
+<meta name="theme-color" content="#f4f4f2" />
+<link rel="icon" type="image/svg+xml" href="logo.svg" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <title>Ebin Raj — Links</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Space+Mono&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#140810;--acc:#fb7185;--acc2:#fb923c;--pink:#f472b6;--text:#fdeff1;--muted:#d3b8c1;--glass:rgba(255,255,255,.06);--brd:rgba(255,255,255,.13);--grad:linear-gradient(120deg,#fb923c,#fb7185,#f472b6)}
+  :root{--bg:#f4f4f2;--text:#0e0e0e;--muted:#6a6a6a;--faint:#9a9a9a;--line:#e3e3e0;--acc:#ff3b30;--glass:rgba(255,255,255,.55);--brd:rgba(0,0,0,.12)}
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{max-width:100%;overflow-x:hidden}
-  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:calc(40px + env(safe-area-inset-top)) 22px calc(40px + env(safe-area-inset-bottom))}
-  .aurora{position:fixed;inset:0;z-index:-1;overflow:hidden}
-  .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5}
-  .b1{width:380px;height:380px;background:#be123c;top:-120px;left:-90px}
-  .b2{width:340px;height:340px;background:#ea580c;bottom:-120px;right:-80px}
-  .wrap{width:100%;max-width:440px;text-align:center}
-  .avatar{width:96px;height:96px;border-radius:50%;margin:0 auto 18px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:'Sora';font-weight:800;font-size:34px;color:#20080f}
-  h1{font-family:'Sora';font-weight:800;font-size:30px;letter-spacing:-.02em}
-  .tag{color:var(--acc);font-weight:600;margin-top:6px;font-size:15px}
-  .award{display:inline-block;margin-top:14px;background:var(--glass);border:1px solid var(--brd);padding:7px 15px;border-radius:999px;font-size:13px;color:#ffd98a}
-  .links{margin-top:30px;display:flex;flex-direction:column;gap:14px}
-  a.link{display:flex;align-items:center;gap:14px;padding:17px 20px;border-radius:16px;background:var(--glass);border:1px solid var(--brd);backdrop-filter:blur(12px);color:var(--text);text-decoration:none;font-weight:600;font-size:16px;transition:transform .15s,background .15s}
-  a.link:active{transform:scale(.98)}
-  a.link:hover{background:rgba(255,255,255,.11)}
-  a.primary{background:var(--grad);color:#20080f;border-color:transparent}
-  .ic{width:26px;text-align:center;font-size:20px;flex:0 0 auto}
-  .arw{margin-left:auto;opacity:.6}
-  footer{margin-top:28px;color:var(--muted);font-size:13px}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:calc(48px + env(safe-area-inset-top)) 22px calc(40px + env(safe-area-inset-bottom));position:relative}
+  /* dot grid + abstract art background */
+  .grid{position:fixed;inset:0;z-index:0;background-image:radial-gradient(rgba(0,0,0,.06) 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
+  .art{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  .art svg{position:absolute}
+  .a1{top:-60px;right:-70px;width:280px}
+  .a2{bottom:-50px;left:-60px;width:240px}
+  .a3{top:34%;left:-46px;width:150px}
+  .a4{bottom:16%;right:-40px;width:170px}
+  .dots{position:fixed;inset:0;z-index:0;pointer-events:none}
+  body.dcur,body.dcur *{cursor:none}
+  .wrap{width:100%;max-width:440px;text-align:center;position:relative;z-index:1}
+  .avatar{width:92px;height:92px;border-radius:24px;margin:0 auto 20px;overflow:hidden;box-shadow:0 16px 40px -18px rgba(0,0,0,.45)}
+  .avatar img{width:100%;height:100%;display:block}
+  h1{font-family:'Space Grotesk';font-weight:700;font-size:38px;letter-spacing:-.03em}
+  .tag{color:#3a3a3a;font-weight:600;margin-top:8px;font-size:15px;font-family:'Inter';letter-spacing:.01em}
+  .links{margin-top:34px;display:flex;flex-direction:column;gap:14px}
+  a.link{display:flex;align-items:center;gap:15px;padding:19px 22px;border-radius:15px;background:rgba(255,255,255,.72);border:1.5px solid rgba(0,0,0,.16);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);color:#0e0e0e;text-decoration:none;font-weight:600;font-size:17.5px;transition:transform .2s cubic-bezier(.2,.8,.2,1),background .2s,box-shadow .2s;box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
+  a.link:hover{background:#fff;box-shadow:0 14px 30px -18px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.8)}
+  a.primary{background:var(--text);color:#fff;border-color:var(--text);box-shadow:0 16px 34px -18px rgba(0,0,0,.6)}
+  a.primary:hover{background:#000;color:#fff}
+  .ic{width:26px;text-align:center;font-size:20px;flex:0 0 auto;font-family:'Space Mono';font-weight:700}
+  .arw{margin-left:auto;opacity:.55;font-family:'Space Mono';font-size:17px}
+  footer{margin-top:32px;color:#4a4a4a;font-size:13px;font-weight:500;font-family:'Inter';letter-spacing:.01em}
 </style>
 </head>
 <body>
-<div class="aurora"><div class="blob b1"></div><div class="blob b2"></div></div>
+<div class="grid"></div>
+<div class="art" aria-hidden="true">
+  <svg class="a1" viewBox="0 0 280 280" fill="none" stroke="#000"><circle cx="140" cy="140" r="130" stroke-opacity=".07"/><circle cx="140" cy="140" r="92" stroke-opacity=".1" stroke-dasharray="2 11"/><circle cx="140" cy="140" r="54" stroke-opacity=".06"/><path d="M140 6 V44 M6 140 H44" stroke-opacity=".09"/><circle cx="140" cy="140" r="6" fill="#ff3b30" stroke="none"/></svg>
+  <svg class="a2" viewBox="0 0 240 240" fill="none" stroke="#000"><rect x="30" y="30" width="180" height="180" stroke-opacity=".06" transform="rotate(45 120 120)"/><circle cx="120" cy="120" r="46" stroke-opacity=".1"/><path d="M120 40 C170 90 150 150 200 200" stroke-opacity=".07"/><circle cx="120" cy="120" r="5" fill="#ff3b30" stroke="none"/></svg>
+  <svg class="a3" viewBox="0 0 150 150" fill="none" stroke="#000"><path d="M20 20 L130 130 M130 20 L20 130" stroke-opacity=".06"/><circle cx="75" cy="75" r="30" stroke-opacity=".12"/><circle cx="20" cy="20" r="4" fill="#ff3b30" stroke="none"/><circle cx="130" cy="130" r="4" fill="#0e0e0e" stroke="none"/></svg>
+  <svg class="a4" viewBox="0 0 170 170" fill="none" stroke="#000"><circle cx="85" cy="85" r="72" stroke-opacity=".08" stroke-dasharray="2 10"/><path d="M85 25 V145 M25 85 H145" stroke-opacity=".06"/><circle cx="85" cy="85" r="5" fill="#ff3b30" stroke="none"/></svg>
+</div>
+<svg class="dots" aria-hidden="true" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+  <g fill="#0e0e0e"><circle cx="120" cy="200" r="4"/><circle cx="880" cy="150" r="4"/><circle cx="300" cy="820" r="4"/><circle cx="760" cy="880" r="4"/><circle cx="520" cy="120" r="3"/><circle cx="180" cy="620" r="3"/><circle cx="900" cy="560" r="3"/></g>
+  <g fill="#ff3b30"><circle cx="200" cy="140" r="5"/><circle cx="820" cy="300" r="5"/><circle cx="140" cy="760" r="4"/><circle cx="860" cy="760" r="4"/><circle cx="640" cy="200" r="4"/><circle cx="380" cy="900" r="3"/></g>
+</svg>
 <div class="wrap">
-  <div class="avatar">ER</div>
+  <div class="avatar"><img src="logo.svg" alt="Ebin Raj logo" /></div>
   <h1>Ebin Raj</h1>
   <div class="tag">AI &amp; Automation Builder · Sharjah, UAE</div>
 
   <div class="links">
-    <a class="link primary" href="https://ebinraj2007-cmd.github.io"><span class="ic">🌐</span> View my portfolio <span class="arw">→</span></a>
-    <a class="link" href="cv.pdf"><span class="ic">📄</span> Download my CV <span class="arw">→</span></a>
-    <a class="link" href="https://linkedin.com/in/ebin-raj-3b3243366"><span class="ic">💼</span> LinkedIn <span class="arw">↗</span></a>
-    <a class="link" href="https://github.com/ebinraj2007-cmd"><span class="ic">💻</span> GitHub <span class="arw">↗</span></a>
-    <a class="link" href="mailto:ebinraj2007@gmail.com"><span class="ic">✉️</span> Email me <span class="arw">↗</span></a>
-    <a class="link" href="tel:+971554016987"><span class="ic">📞</span> Call me <span class="arw">↗</span></a>
+    <a class="link primary" href="https://ebinraj2007-cmd.github.io"><span class="ic">◎</span> View my portfolio <span class="arw">→</span></a>
+    <a class="link" href="cv.pdf"><span class="ic">▤</span> Download my CV <span class="arw">→</span></a>
+    <a class="link" href="https://linkedin.com/in/ebin-raj-3b3243366"><span class="ic">in</span> LinkedIn <span class="arw">↗</span></a>
+    <a class="link" href="https://github.com/ebinraj2007-cmd"><span class="ic">&lt;/&gt;</span> GitHub <span class="arw">↗</span></a>
+    <a class="link" href="mailto:ebinraj2007@gmail.com"><span class="ic">✦</span> Email me <span class="arw">↗</span></a>
+    <a class="link" href="tel:+971554016987"><span class="ic">☏</span> Call me <span class="arw">↗</span></a>
   </div>
 
   <footer>+971 55 401 6987 &nbsp;·&nbsp; ebinraj2007@gmail.com</footer>
 </div>
+<script>
+  // subtle click sound + magnetic pull, matching the portfolio
+  let AC=null,on=true;
+  function ac(){if(!AC){try{AC=new(window.AudioContext||window.webkitAudioContext)()}catch(e){return}}if(AC.state==='suspended')AC.resume()}
+  function tone(f,d,t,v){if(!on)return;ac();if(!AC)return;const o=AC.createOscillator(),g=AC.createGain();o.type=t;o.frequency.value=f;g.gain.setValueAtTime(0,AC.currentTime);g.gain.linearRampToValueAtTime(v,AC.currentTime+.01);g.gain.exponentialRampToValueAtTime(.0001,AC.currentTime+d);o.connect(g);g.connect(AC.destination);o.start();o.stop(AC.currentTime+d)}
+  if(!matchMedia('(pointer:coarse)').matches){
+    document.querySelectorAll('a.link').forEach(el=>{
+      el.style.willChange='transform';
+      el.addEventListener('mouseenter',()=>tone(620,.06,'sine',.03));
+      el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect();el.style.transform='translate('+((e.clientX-(r.left+r.width/2))*.12)+'px,'+((e.clientY-(r.top+r.height/2))*.3)+'px)'});
+      el.addEventListener('mouseleave',()=>el.style.transform='');
+      el.addEventListener('click',()=>{tone(520,.05,'triangle',.05);setTimeout(()=>tone(880,.08,'sine',.03),16)});
+    });
+  }
+  // liquid metaball inverting cursor (same as portfolio)
+  if(matchMedia('(pointer:fine)').matches){
+    const NS='http://www.w3.org/2000/svg';
+    const svg=document.createElementNS(NS,'svg');svg.style.cssText='position:fixed;inset:0;width:100vw;height:100vh;z-index:95;pointer-events:none;mix-blend-mode:difference';
+    svg.innerHTML='<defs><filter id="goof"><feGaussianBlur in="SourceGraphic" stdDeviation="16" result="b"/><feColorMatrix in="b" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 20 -9"/></filter></defs>';
+    const g=document.createElementNS(NS,'g');g.setAttribute('filter','url(#goof)');g.setAttribute('fill','#fff');svg.appendChild(g);document.body.appendChild(svg);
+    let mx=innerWidth/2,my=innerHeight/2;const N=18,blobs=[],circ=[];
+    for(let i=0;i<N;i++){const c=document.createElementNS(NS,'circle');c.setAttribute('r',Math.max(18,56-i*2.1));g.appendChild(c);circ.push(c);blobs.push({x:mx,y:my});}
+    addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+    (function lp(){
+      blobs[0].x+=(mx-blobs[0].x)*0.085;blobs[0].y+=(my-blobs[0].y)*0.085;circ[0].setAttribute('cx',blobs[0].x);circ[0].setAttribute('cy',blobs[0].y);
+      for(let i=1;i<N;i++){const b=blobs[i],p=blobs[i-1];b.x+=(p.x-b.x)*0.45;b.y+=(p.y-b.y)*0.45;circ[i].setAttribute('cx',b.x);circ[i].setAttribute('cy',b.y);}
+      requestAnimationFrame(lp);
+    })();
+  }
+</script>
 </body>
 </html>

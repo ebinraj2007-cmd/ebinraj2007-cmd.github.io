@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".85"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="8" y="8" width="240" height="240" rx="64" fill="#0d0d0d"/>
+  <rect x="11" y="11" width="234" height="234" rx="61" fill="none" stroke="#ffffff" stroke-width="2" opacity=".4"/>
+
+  <g>
+    <circle cx="128" cy="128" r="96" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-dasharray="2 13" opacity=".5"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 128 128" to="360 128 128" dur="16s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <circle cx="128" cy="128" r="84" fill="none" stroke="#ffffff" stroke-width="1.2" opacity=".18"/>
+    <animateTransform attributeName="transform" type="rotate" from="360 128 128" to="0 128 128" dur="22s" repeatCount="indefinite"/>
+  </g>
+  <g>
+    <line x1="128" y1="128" x2="128" y2="36" stroke="url(#scan)" stroke-width="3" stroke-linecap="round" opacity=".5"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 128 128" to="360 128 128" dur="4.5s" repeatCount="indefinite"/>
+  </g>
+
+  <g fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity=".6">
+    <path d="M44 66 V48 H62"/><path d="M212 66 V48 H194"/><path d="M44 190 V208 H62"/><path d="M212 190 V208 H194"/>
+  </g>
+
+  <g transform="translate(5,0) skewX(-12)">
+    <rect x="74" y="150" width="114" height="15" rx="7.5" fill="#ffffff" opacity=".2"/>
+    <rect x="96" y="86" width="72" height="17" rx="8.5" fill="#ffffff"/>
+    <rect x="96" y="120" width="52" height="17" rx="8.5" fill="#ffffff"/>
+    <rect x="96" y="154" width="72" height="17" rx="8.5" fill="#ffffff"/>
+    <rect x="96" y="86" width="17" height="85" rx="8.5" fill="#ffffff"/>
+  </g>
+
+  <g>
+    <circle cx="196" cy="92" r="5" fill="#fff"/>
+    <path d="M186 92 H176 M196 82 V74" stroke="#fff" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <animate attributeName="opacity" values="1;.25;1" dur="1.6s" repeatCount="indefinite"/>
+  </g>
+</svg>
