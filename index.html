@@ -160,6 +160,30 @@
   .rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
   .rv.in{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.mtn{transform:none!important}}
+  /* ===== mobile / small screens ===== */
+  @media(max-width:680px){
+    .sec{padding:64px 0}
+    .wrap{padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+    .glass{display:none}
+    .cx{display:none}
+    .htag{top:88px;font-size:10px}
+    .hname{bottom:30vh;font-size:clamp(58px,19vw,120px);letter-spacing:-.03em}
+    .pcards{gap:26px;margin-top:38px}
+    .pc-l{padding:30px 24px}
+    .pidx{font-size:44px;top:8px;right:16px}
+    .pc:nth-child(even) .pidx{left:16px}
+    .state{padding:52px 0}
+    .kb{padding:24px 0}
+    .contact h2{font-size:clamp(30px,10vw,54px)}
+    .clinks a{padding:12px 16px;font-size:11px}
+    .fname div{font-size:clamp(46px,22vw,130px)}
+    #pre{padding:26px}
+    #snd{right:12px;bottom:calc(12px + env(safe-area-inset-bottom));padding:8px 11px;font-size:10px}
+  }
+  @media(max-width:400px){
+    .hname{font-size:clamp(48px,18vw,90px)}
+    .htag{max-width:60%}
+  }
 </style>
 </head>
 <body>
