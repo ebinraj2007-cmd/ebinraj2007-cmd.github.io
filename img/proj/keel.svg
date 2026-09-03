@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4457D6"/>
+      <stop offset="1" stop-color="#2A3894"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="228" fill="url(#bg)"/>
+  <!-- A hull in section: two strakes falling to the keel, which runs on below it. -->
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M248 332 Q512 866 776 332" stroke-width="52" stroke-opacity="0.30"/>
+    <path d="M348 332 Q512 754 676 332" stroke-width="54" stroke-opacity="0.55"/>
+    <path d="M512 356 L512 760" stroke-width="58" stroke-opacity="1"/>
+  </g>
+</svg>
