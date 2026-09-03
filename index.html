@@ -35,6 +35,8 @@ html.sk-done #skel{animation:none;opacity:0;visibility:hidden;transition:opacity
 
 .sk-nav{position:absolute;top:14px;left:0;right:0;height:56px;z-index:6}
 .sk-nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between}
+@media(max-width:620px){.sk-navr .sk-nlink{display:none}}
+
 .sk-navr{display:flex;align-items:center;gap:22px}
 
 
@@ -133,7 +135,7 @@ html.sk-stuck .sk-skip{display:inline-block}
 
 <div id="skel">
   <div class="sk-shell" aria-hidden="true">
-    <div class="sk-nav"><div class="wrap"><span class="sk sk-d1" style="width:107px;height:15px"></span><span class="sk-navr"><span class="sk sk-d2" style="width:38px;height:11px"></span><span class="sk sk-d3" style="width:46px;height:11px"></span><span class="sk sk-d4" style="width:132px;height:35px;border-radius:2px"></span></span></div></div>
+    <div class="sk-nav"><div class="wrap"><span class="sk sk-d1" style="width:107px;height:15px"></span><span class="sk-navr"><span class="sk sk-d2 sk-nlink" style="width:38px;height:11px"></span><span class="sk sk-d3 sk-nlink" style="width:33px;height:11px"></span><span class="sk sk-d3 sk-nlink" style="width:46px;height:11px"></span><span class="sk sk-d4" style="width:132px;height:35px;border-radius:2px"></span></span></div></div>
     <div class="sk-hero">
       <div class="htag"><span class="sk sk-d1" style="width:212px;height:12px"></span></div>
       <div class="glass"><div class="h"><span class="sk sk-d1" style="width:88px;height:10px"></span></div><div class="rg"><span class="sk sk-d2" style="width:58px;height:9px"></span><span class="sk sk-d2" style="width:76px;height:9px"></span></div><div class="rg"><span class="sk sk-d3" style="width:58px;height:9px"></span><span class="sk sk-d3" style="width:76px;height:9px"></span></div><div class="rg"><span class="sk sk-d4" style="width:58px;height:9px"></span><span class="sk sk-d4" style="width:76px;height:9px"></span></div></div>
@@ -152,7 +154,7 @@ html.sk-stuck .sk-skip{display:inline-block}
 
 <nav><div class="wrap in">
   <span class="brand"><i></i> EBIN RAJ</span>
-  <div class="nl"><a href="#work">Work</a><a href="#about">About</a><a class="cta" href="#contact">Get in touch</a></div>
+  <div class="nl"><a href="#work">Work</a><a href="web.html">Web</a><a href="#about">About</a><a class="cta" href="#contact">Get in touch</a></div>
 </div></nav>
 
 <header class="hero">

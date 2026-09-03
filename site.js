@@ -55,3 +55,93 @@ const bar=document.getElementById('bar');
     })();
     document.querySelectorAll('a,.pc,button').forEach(el=>{el.addEventListener('mouseenter',()=>r.classList.add('big'));el.addEventListener('mouseleave',()=>r.classList.remove('big'));});
   }
+
+/* ── WEB DEVELOPMENT PAGE: live embeds ─────────────────────────────── */
+(function(){
+  const stages = document.querySelectorAll('.wd-stage[data-mode="live"]');
+  if(!stages.length) return;
+
+  // Fit an intrinsically-wide viewport into the stage: render the iframe at its
+  // true CSS width, then scale the whole thing down. The site inside still
+  // believes it is 1280px wide, so it renders its real desktop layout.
+  function fit(st){
+    const view = st.querySelector('.wd-view'), box = st.querySelector('.wd-fit');
+    if(!box) return;
+    const f = box.querySelector('iframe'); if(!f) return;
+    const cw = view.clientWidth, ch = view.clientHeight;
+    const want = st.dataset.vw || 'full';
+    const W = want === 'full' ? Math.max(1280, cw) : parseInt(want, 10);
+    const s = Math.min(1, cw / W);
+    box.style.width  = Math.round(W * s) + 'px';
+    box.style.height = ch + 'px';
+    f.style.width  = W + 'px';
+    f.style.height = Math.ceil(ch / s) + 'px';
+    f.style.transform = s === 1 ? 'none' : 'scale(' + s + ')';
+  }
+
+  function boot(st){
+    if(st.querySelector('.wd-fit')) return;
+    const view = st.querySelector('.wd-view');
+    const box = document.createElement('div'); box.className = 'wd-fit';
+    const load = document.createElement('div'); load.className = 'wd-load';
+    const f = document.createElement('iframe');
+    f.className = 'wd-if';
+    f.title = st.dataset.name + ', running live';
+    f.setAttribute('referrerpolicy', 'no-referrer');
+    if(st.dataset.allow) f.setAttribute('allow', st.dataset.allow);
+    box.appendChild(load); box.appendChild(f); view.appendChild(box);
+    st.classList.add('wd-on');
+    arm(st, f);
+    f.src = st.dataset.src;
+    fit(st);
+  }
+
+  // A cross-origin frame that refuses to load still fires `load` in some
+  // browsers, so the timer is a backstop, not the primary signal.
+  function arm(st, f){
+    st.classList.remove('wd-ready','wd-broke');
+    const t = setTimeout(function(){ st.classList.add('wd-broke'); }, 12000);
+    f.addEventListener('load', function(){
+      clearTimeout(t);
+      st.classList.add('wd-ready');
+      st.classList.remove('wd-broke');
+    }, {once:true});
+  }
+
+  stages.forEach(function(st){
+    const view = st.querySelector('.wd-view');
+    // Pick the widest viewport that still renders above ~87% scale. A 1280px
+    // page squeezed into a 350px column is a screenshot, not something usable.
+    const cw = view.clientWidth;
+    const pick = cw < 760 ? '390' : cw < 1000 ? '820' : 'full';
+    if(pick !== 'full'){
+      st.dataset.vw = pick;
+      const b = st.querySelector('.wd-w[data-w="' + pick + '"]');
+      if(b){ st.querySelectorAll('.wd-w').forEach(x=>{x.classList.remove('on');x.setAttribute('aria-pressed','false');});
+             b.classList.add('on'); b.setAttribute('aria-pressed','true'); }
+    }
+    st.addEventListener('click', function(e){
+      const launch = e.target.closest('.wd-launch');
+      if(launch){ boot(st); return; }
+      const w = e.target.closest('.wd-w');
+      if(w){
+        st.dataset.vw = w.dataset.w;
+        st.querySelectorAll('.wd-w').forEach(x=>{x.classList.remove('on');x.setAttribute('aria-pressed','false');});
+        w.classList.add('on'); w.setAttribute('aria-pressed','true');
+        fit(st);
+        return;
+      }
+      if(e.target.closest('.wd-re')){
+        const f = st.querySelector('.wd-if');
+        if(f){ st.classList.remove('wd-ready'); arm(st, f); f.src = st.dataset.src; }
+        else boot(st);
+      }
+    });
+  });
+
+  let rt;
+  addEventListener('resize', function(){
+    clearTimeout(rt);
+    rt = setTimeout(function(){ stages.forEach(fit); }, 140);
+  });
+})();

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-loading>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="theme-color" content="#f4f4f2" />
+<title>Web development — Ebin Raj</title>
+<meta name="description" content="Five websites built by Ebin Raj, running live inside the page — a client yacht-charter site, two full booking and e-commerce builds, and two open-source security tools." />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="logo.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+<style id="skcss">#skel{position:fixed;inset:0;z-index:1000;background:#f4f4f2;opacity:0;
+  animation:skfade .35s ease 120ms both}
+#skel.sk-dark{background:#0b0b0d}
+@keyframes skfade{to{opacity:1}}
+html.sk-done #skel{animation:none;opacity:0;visibility:hidden;transition:opacity .5s ease,visibility .5s}
+.sk-shell{position:absolute;inset:0;overflow:hidden}
+
+
+.sk{display:block;position:relative;overflow:hidden;border-radius:8px;background:#dbdbd6}
+.sk::after{content:"";position:absolute;inset:0;transform:translateX(-100%);
+  background:linear-gradient(90deg,rgba(255,255,255,0) 0,rgba(255,255,255,.85) 50%,rgba(255,255,255,0) 100%);
+  animation:skwave 2.4s cubic-bezier(.45,0,.25,1) infinite}
+@keyframes skwave{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+.sk-d1::after{animation-delay:.1s}.sk-d2::after{animation-delay:.2s}
+.sk-d3::after{animation-delay:.3s}.sk-d4::after{animation-delay:.4s}
+.sk-dark .sk{background:#212227}
+.sk-dark .sk::after{background:linear-gradient(90deg,rgba(255,255,255,0) 0,rgba(255,255,255,.14) 50%,rgba(255,255,255,0) 100%)}
+@media(prefers-reduced-motion:reduce){.sk::after{animation:none;opacity:.4;transform:none}}
+
+
+.sk-nav{position:absolute;top:14px;left:0;right:0;height:56px;z-index:6}
+.sk-nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between}
+@media(max-width:620px){.sk-navr .sk-nlink{display:none}}
+
+.sk-navr{display:flex;align-items:center;gap:22px}
+
+
+.sk-hero{position:absolute;top:70px;left:0;right:0;height:100vh}
+.sk-hero .glass{display:block}
+.sk-hero .glass .h{margin-bottom:10px}
+.sk-hero .glass .rg{align-items:center;gap:12px}
+.sk-hero .hname{height:.78em;display:flex;align-items:center;justify-content:center}
+.sk-name{width:min(68%,990px);height:78%;border-radius:16px}
+@media(max-width:680px){.sk-hero .glass{display:none}}
+
+
+.sk-workbody{position:absolute;top:70px;left:0;right:0;bottom:0;background:#0b0b0d;padding:92px 0}
+@media(max-width:680px){.sk-workbody{padding:64px 0}}
+.sk-workbody .whead h2{margin:0}
+.sk-workbody .allnote{display:block}
+.sk-workbody .whead h2 .sk,.sk-workbody .allnote .sk{display:inline-block;vertical-align:middle}
+.sk-mob{display:none}
+@media(max-width:720px){.sk-mob{display:inline}}
+.sk-card{display:grid;grid-template-columns:52% 48%;min-height:511px;
+  border:1px solid rgba(255,255,255,.13);border-radius:16px;overflow:hidden}
+.sk-cardl{padding:52px 48px;display:flex;flex-direction:column;gap:14px;justify-content:center}
+.sk-cardr{background:#111214;border-left:1px solid rgba(255,255,255,.13)}
+@media(max-width:720px){
+  .sk-card{grid-template-columns:1fr;min-height:676px}
+  .sk-cardl{padding:30px 24px}
+  .sk-cardr{border-left:none;border-top:1px solid rgba(255,255,255,.13);min-height:200px}
+}
+
+
+.sk-notice{position:absolute;left:50%;bottom:56px;transform:translateX(-50%);width:min(340px,82vw);
+  text-align:center;opacity:0;transition:opacity .5s ease;pointer-events:none;z-index:8}
+html.sk-slow .sk-notice{opacity:1;pointer-events:auto}
+.sk-noticetxt{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6a6a6a}
+.sk-track{margin-top:12px;height:2px;background:rgba(0,0,0,.12);border-radius:2px;overflow:hidden}
+.sk-fill{height:100%;width:0;background:#ff3b30;transition:width .45s ease}
+.sk-skip{margin-top:16px;display:none;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:#6a6a6a;background:none;border:1px solid #e3e3e0;border-radius:999px;
+  padding:9px 16px;cursor:pointer;transition:border-color .25s,color .25s}
+.sk-skip:hover{border-color:#0e0e0e;color:#0e0e0e}
+html.sk-stuck .sk-skip{display:inline-block}
+.sk-dark .sk-noticetxt,.sk-dark .sk-skip{color:#8a8a8a}
+.sk-dark .sk-track{background:rgba(255,255,255,.14)}
+.sk-dark .sk-skip{border-color:rgba(255,255,255,.18)}</style>
+<script id="skjs">/* Skeleton loader. Runs from <head> before the stylesheet, so a slow
+   stylesheet cannot stop it. The skeleton itself needs no JS to appear:
+   CSS fades it in at 120ms. JS only ends it, and escalates when slow. */
+(function () {
+  var d = document.documentElement, t0 = Date.now(), finished = false;
+  var SHOW = 120, MIN_VISIBLE = 400, SLOW_AT = 3000, STUCK_AT = 8000, HARD_CAP = 20000;
+  var tSlow = setTimeout(function () { if (!finished) d.classList.add('sk-slow'); }, SLOW_AT);
+  var tStuck = setTimeout(function () { if (!finished) d.classList.add('sk-stuck'); }, STUCK_AT);
+  var tCap = setTimeout(finish, HARD_CAP);
+
+  function finish() {
+    if (finished) return;
+    finished = true;
+    clearTimeout(tSlow); clearTimeout(tStuck); clearTimeout(tCap);
+    var elapsed = Date.now() - t0;
+    var wait = elapsed < SHOW ? 0 : Math.max(0, SHOW + MIN_VISIBLE - elapsed);
+    setTimeout(function () {
+      d.classList.add('sk-done'); d.removeAttribute('data-loading');
+      setTimeout(function () {
+        var s = document.getElementById('skel');
+        if (s && s.parentNode) s.parentNode.removeChild(s);
+      }, 700);
+    }, wait);
+  }
+
+  document.addEventListener('click', function (e) {
+    for (var t = e.target; t && t.classList; t = t.parentNode)
+      if (t.classList.contains('sk-skip')) { finish(); return; }
+  }, true);
+
+  function wire() {
+    var s = document.getElementById('skel'); if (!s) return;
+    var fill = s.querySelector('.sk-fill');
+    var imgs = [].slice.call(document.images);
+    var total = imgs.length + 2, done = 0;
+    function step() { done++; if (fill) fill.style.width = Math.min(100, Math.round(done / total * 100)) + '%'; }
+    imgs.forEach(function (im) {
+      if (im.complete) step();
+      else { im.addEventListener('load', step, { once: true }); im.addEventListener('error', step, { once: true }); }
+    });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(step); else step();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire); else wire();
+  if (document.readyState === 'complete') finish(); else window.addEventListener('load', finish, { once: true });
+})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style id="skcss2">
+.sk-webbody{position:absolute;top:70px;left:0;right:0;bottom:0;padding:56px 0}
+.sk-blk{display:block}
+.sk-row{display:flex;align-items:center;gap:8px}
+.sk-row .sk{display:block;flex:0 0 auto}
+.sk-wdgrid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:22px 56px;align-items:start;margin-bottom:26px}
+.sk-wdlist{margin-top:64px}
+.sk-wdstage{border-radius:20px;overflow:hidden;background:#101014}
+.sk-wdbar{height:48px;background:#17171c}
+.sk-wdview{height:660px;background:#eeeeec}
+@media(max-width:900px){.sk-wdview{height:520px}}
+@media(max-width:760px){.sk-wdbar{height:62px}}
+@media(max-width:620px){.sk-webbody{padding:40px 0}.sk-wdview{height:470px}.sk-wdbar{height:99px}}
+@media(max-width:620px){.sk-navr .sk-nlink{display:none}}
+/* visibility switches last so they beat the layout rules above */
+.sk-only-m{display:none}
+@media(max-width:900px){.sk-only-d{display:none}.sk-only-m{display:block}}
+</style>
+</head>
+<body>
+
+<div id="skel">
+  <div class="sk-shell" aria-hidden="true">
+    <div class="sk-nav"><div class="wrap"><span class="sk sk-d1" style="width:107px;height:15px"></span><span class="sk-navr"><span class="sk sk-d2 sk-nlink" style="width:38px;height:11px"></span><span class="sk sk-d3 sk-nlink" style="width:62px;height:11px"></span><span class="sk sk-d4" style="width:132px;height:35px;border-radius:2px"></span></span></div></div>
+    <div class="sk-webbody"><div class="wrap">
+      <div class="sk-blk sk-head sk-only-d"><span class="sk-row" style="height:41px"><i class="sk sk-d1" style="width:min(335px,74vw);height:30px"></i></span></div><div class="sk-blk sk-head sk-only-m"><span class="sk-row" style="height:26.5px"><i class="sk sk-d1" style="width:min(53px,20vw);height:21px"></i></span><span class="sk-row" style="height:26.5px"><i class="sk sk-d1" style="width:min(159px,52vw);height:21px"></i></span></div>
+      <div class="sk-blk sk-intro sk-only-d" style="margin-top:20px"><span class="sk-row" style="height:27.5px"><i class="sk sk-d1" style="width:600px;height:12px"></i></span><span class="sk-row" style="height:27.5px"><i class="sk sk-d2" style="width:638px;height:12px"></i></span><span class="sk-row" style="height:27.5px"><i class="sk sk-d3" style="width:642px;height:12px"></i></span><span class="sk-row" style="height:27.5px"><i class="sk sk-d4" style="width:465px;height:12px"></i></span></div><div class="sk-blk sk-intro sk-only-m" style="margin-top:20px"><span class="sk-row" style="height:27.625px"><i class="sk sk-d1" style="width:min(331px,97%);height:12px"></i></span><span class="sk-row" style="height:27.625px"><i class="sk sk-d2" style="width:min(310px,97%);height:12px"></i></span><span class="sk-row" style="height:27.625px"><i class="sk sk-d3" style="width:min(299px,97%);height:12px"></i></span><span class="sk-row" style="height:27.625px"><i class="sk sk-d4" style="width:min(335px,97%);height:12px"></i></span><span class="sk-row" style="height:27.625px"><i class="sk sk-d1" style="width:min(324px,97%);height:12px"></i></span><span class="sk-row" style="height:27.625px"><i class="sk sk-d2" style="width:min(313px,97%);height:12px"></i></span><span class="sk-row" style="height:27.625px"><i class="sk sk-d3" style="width:min(313px,97%);height:12px"></i></span><span class="sk-row" style="height:27.625px"><i class="sk sk-d4" style="width:min(102px,97%);height:12px"></i></span></div>
+      <div class="sk-wdlist">
+        <div class="sk-wdinfo sk-wdgrid sk-only-d"><div class="sk-blk"><span class="sk-row" style="height:28px"><i class="sk sk-d1" style="width:118px;height:23px"></i></span><span style="display:block;height:12px"></span><span class="sk-row" style="height:43px"><i class="sk sk-d2" style="width:min(198px,62%);height:36px"></i></span><span style="display:block;height:22px"></span><span class="sk-row" style="height:21px"><i class="sk sk-d3" style="width:124px;height:11px"></i></span></div><div class="sk-blk"><span class="sk-row" style="height:27.5px"><i class="sk sk-d1" style="width:621px;height:12px"></i></span><span class="sk-row" style="height:27.5px"><i class="sk sk-d2" style="width:594px;height:12px"></i></span><span class="sk-row" style="height:27.5px"><i class="sk sk-d3" style="width:623px;height:12px"></i></span><span class="sk-row" style="height:27.5px"><i class="sk sk-d4" style="width:100px;height:12px"></i></span><span style="display:block;height:16px"></span><span class="sk-row" style="height:29px"><i class="sk sk-d1" style="width:118px;height:27px"></i><i class="sk sk-d2" style="width:152px;height:27px"></i><i class="sk sk-d3" style="width:124px;height:27px"></i><i class="sk sk-d4" style="width:140px;height:27px"></i></span></div></div><div class="sk-blk sk-wdinfo sk-only-m" style="margin-bottom:26px"><span class="sk-row" style="height:28px"><i class="sk sk-d1" style="width:160px;height:23px"></i></span><span style="display:block;height:12px"></span><span class="sk-row" style="height:28px"><i class="sk sk-d2" style="width:127px;height:26px"></i></span><span style="display:block;height:13px"></span><span class="sk-row" style="height:27.57px"><i class="sk sk-d1" style="width:min(311px,97%);height:12px"></i></span><span class="sk-row" style="height:27.57px"><i class="sk sk-d2" style="width:min(305px,97%);height:12px"></i></span><span class="sk-row" style="height:27.57px"><i class="sk sk-d3" style="width:min(318px,97%);height:12px"></i></span><span class="sk-row" style="height:27.57px"><i class="sk sk-d4" style="width:min(305px,97%);height:12px"></i></span><span class="sk-row" style="height:27.57px"><i class="sk sk-d1" style="width:min(274px,97%);height:12px"></i></span><span class="sk-row" style="height:27.57px"><i class="sk sk-d2" style="width:min(335px,97%);height:12px"></i></span><span class="sk-row" style="height:27.57px"><i class="sk sk-d3" style="width:min(78px,97%);height:12px"></i></span><span style="display:block;height:16px"></span><span class="sk-row" style="height:29px"><i class="sk sk-d1" style="width:118px;height:27px"></i><i class="sk sk-d2" style="width:152px;height:27px"></i></span><span style="display:block;height:8px"></span><span class="sk-row" style="height:29px"><i class="sk sk-d3" style="width:124px;height:27px"></i><i class="sk sk-d4" style="width:140px;height:27px"></i></span><span style="display:block;height:22px"></span><span class="sk-row" style="height:21px"><i class="sk sk-d4" style="width:117px;height:11px"></i></span></div>
+        <div class="sk-wdstage"><div class="sk-wdbar"></div><div class="sk-wdview"><span class="sk" style="display:block;width:100%;height:100%;border-radius:0"></span></div></div>
+      </div>
+    </div></div>
+  </div>
+  <div class="sk-notice" role="status" aria-live="polite">
+    <div class="sk-noticetxt">Still loading</div>
+    <div class="sk-track"><div class="sk-fill"></div></div>
+    <button type="button" class="sk-skip">Show the page anyway</button>
+  </div>
+</div>
+<div id="bar"></div>
+
+<nav><div class="wrap in">
+  <a class="brand" href="index.html"><i></i> EBIN RAJ</a>
+  <div class="nl"><a href="index.html">Home</a><a href="work.html">All work</a><a class="cta" href="index.html#contact">Get in touch</a></div>
+</div></nav>
+
+<section class="wdsec sec" id="web"><div class="wrap">
+  <div class="whead rv"><h1>Web development</h1><span class="lbl">Five sites · three run here</span></div>
+  <p class="wdintro rv">Every site I have built for the web, running on this page. Load one and it is the real thing, not a video or a mockup: click through it, scroll it, and switch it between desktop, tablet and phone while it runs. Two of them send a header that forbids being framed, so those show the whole page as a capture you can scroll instead.</p>
+  <div class="wdlist">
+  <article class="wd rv" id="wave-fest">
+    <div class="wd-info">
+      <div><div class="wd-top"><span class="wd-i">01</span><span class="wd-tag wd-client">Client build</span></div><h2 class="wd-name">Wave Fest</h2><div class="wd-acts"><a href="https://wavefest.vercel.app" target="_blank" rel="noopener">Open the site ↗</a></div></div>
+      <div><p class="wd-desc">Private yacht charters in Dubai. The public site quotes one price with no deposit until you say yes. Behind it: an admin dashboard with a content editor, a chat assistant that answers from a knowledge base, and enquiry, messaging and visit-tracking APIs on Supabase.</p><div class="wd-chips"><span>Admin + editor</span><span>Knowledge-base chat</span><span>Supabase APIs</span><span>Enquiry pipeline</span></div></div>
+    </div>
+    <div class="wd-stage" data-mode="live" data-src="https://wavefest.vercel.app" data-name="Wave Fest"><div class="wd-bar"><span class="wd-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="wd-addr">wavefest.vercel.app</span><span class="wd-live-dot"><i></i>Live</span><span class="wd-ctl"><button type="button" class="wd-w on" data-w="full" aria-pressed="true">Desktop</button><button type="button" class="wd-w" data-w="820" aria-pressed="false">Tablet</button><button type="button" class="wd-w" data-w="390" aria-pressed="false">Phone</button><button type="button" class="wd-re">Reload</button></span></div><div class="wd-view"><div class="wd-hold"><picture class="wd-pic"><source media="(max-width:620px)" srcset="img/web/wavefest-phone.jpg" width="390" height="600"><img class="wd-poster" src="img/web/wavefest-poster.jpg" alt="Wave Fest home page" width="1280" height="800" loading="lazy" decoding="async"></picture><div class="wd-cta"><button type="button" class="wd-launch">Load the live site</button><span class="wd-hint">Runs the real site, right here</span></div></div><div class="wd-fail"><p>This one would not load inside the page. It is still up — open it in its own tab.</p><a href="https://wavefest.vercel.app" target="_blank" rel="noopener">Open Wave Fest ↗</a></div></div></div>
+    
+  </article>
+  <article class="wd rv" id="muneera-beauty-center">
+    <div class="wd-info">
+      <div><div class="wd-top"><span class="wd-i">02</span><span class="wd-tag wd-demo">Demo build</span></div><h2 class="wd-name">Muneera Beauty Center</h2><div class="wd-acts"><a href="https://muneera-beauty-center.vercel.app" target="_blank" rel="noopener">Open the site ↗</a></div></div>
+      <div><p class="wd-desc">A salon booking system built end to end. A customer books online, the booking lands in Supabase, a confirmation goes out by email and straight to the owner's WhatsApp, and the owner signs in to an admin page to move, cancel or complete every appointment.</p><div class="wd-chips"><span>Supabase bookings</span><span>WhatsApp + email</span><span>Admin login</span><span>Service catalogue</span></div></div>
+    </div>
+    <div class="wd-stage" data-mode="shot"><div class="wd-bar"><span class="wd-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="wd-addr">muneera-beauty-center.vercel.app</span><span class="wd-ctl"><span class="wd-still">Full page · scroll</span></span></div><div class="wd-view wd-scroll" style="--gut:#16110a"><img class="wd-shot" src="img/web/muneera-full.jpg" alt="The whole Muneera Beauty Center page, top to bottom" width="900" loading="lazy" decoding="async"></div></div>
+    <p class="wd-cap"><b>Why this one is a picture.</b> Muneera Beauty Center sends <code>X-Frame-Options</code>, so it refuses to run inside another page — the same header that stops anyone else framing it. Scroll the capture here, or open the real site.</p>
+  </article>
+  <article class="wd rv" id="stem-by-stem">
+    <div class="wd-info">
+      <div><div class="wd-top"><span class="wd-i">03</span><span class="wd-tag wd-demo">Demo build</span></div><h2 class="wd-name">Stem by Stem</h2><div class="wd-acts"><a href="https://stem-by-stem.vercel.app" target="_blank" rel="noopener">Open the site ↗</a></div></div>
+      <div><p class="wd-desc">A flower shop delivering across all seven emirates. Describe a feeling and it designs the bouquet for you, or build one stem by stem. Cart and Stripe checkout, customer sign-in, an admin page, English and Arabic, light and dark.</p><div class="wd-chips"><span>Stripe checkout</span><span>AI bouquet builder</span><span>Arabic + English</span><span>Light + dark</span></div></div>
+    </div>
+    <div class="wd-stage" data-mode="shot"><div class="wd-bar"><span class="wd-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="wd-addr">stem-by-stem.vercel.app</span><span class="wd-ctl"><span class="wd-still">Full page · scroll</span></span></div><div class="wd-view wd-scroll" style="--gut:#ece6e2"><img class="wd-shot" src="img/web/stem-full.jpg" alt="The whole Stem by Stem page, top to bottom" width="900" loading="lazy" decoding="async"></div></div>
+    <p class="wd-cap"><b>Why this one is a picture.</b> Stem by Stem sends <code>X-Frame-Options</code>, so it refuses to run inside another page — the same header that stops anyone else framing it. Scroll the capture here, or open the real site.</p>
+  </article>
+  <article class="wd rv" id="barjeel">
+    <div class="wd-info">
+      <div><div class="wd-top"><span class="wd-i">04</span><span class="wd-tag wd-os">Open source</span></div><h2 class="wd-name">Barjeel</h2><div class="wd-acts"><a href="https://ebinraj2007-cmd.github.io/barjeel/" target="_blank" rel="noopener">Open the site ↗</a><a href="https://github.com/ebinraj2007-cmd/barjeel" target="_blank" rel="noopener">Read the code ↗</a></div></div>
+      <div><p class="wd-desc">An offline QR scam scanner. Point it at a code and it tells you where that code actually leads before anything opens: lookalike domains, punycode, subdomain tricks. It never opens a link for you and nothing leaves the device.</p><div class="wd-chips"><span>20 checks</span><span>81 tests</span><span>Fully offline</span><span>Never opens links</span></div></div>
+    </div>
+    <div class="wd-stage" data-mode="live" data-src="https://ebinraj2007-cmd.github.io/barjeel/" data-name="Barjeel" data-allow="camera; clipboard-write"><div class="wd-bar"><span class="wd-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="wd-addr">ebinraj2007-cmd.github.io/barjeel</span><span class="wd-live-dot"><i></i>Live</span><span class="wd-ctl"><button type="button" class="wd-w on" data-w="full" aria-pressed="true">Desktop</button><button type="button" class="wd-w" data-w="820" aria-pressed="false">Tablet</button><button type="button" class="wd-w" data-w="390" aria-pressed="false">Phone</button><button type="button" class="wd-re">Reload</button></span></div><div class="wd-view"><div class="wd-hold"><picture class="wd-pic"><source media="(max-width:620px)" srcset="img/web/barjeel-phone.jpg" width="390" height="600"><img class="wd-poster" src="img/web/barjeel-poster.jpg" alt="Barjeel home page" width="1280" height="800" loading="lazy" decoding="async"></picture><div class="wd-cta"><button type="button" class="wd-launch">Load the live site</button><span class="wd-hint">Runs the real site, right here</span></div></div><div class="wd-fail"><p>This one would not load inside the page. It is still up — open it in its own tab.</p><a href="https://ebinraj2007-cmd.github.io/barjeel/" target="_blank" rel="noopener">Open Barjeel ↗</a></div></div></div>
+    
+  </article>
+  <article class="wd rv" id="sentry">
+    <div class="wd-info">
+      <div><div class="wd-top"><span class="wd-i">05</span><span class="wd-tag wd-award">Award 2026</span></div><h2 class="wd-name">SENTRY</h2><div class="wd-acts"><a href="https://ebinraj2007-cmd.github.io/sentry/" target="_blank" rel="noopener">Open the site ↗</a><a href="https://github.com/ebinraj2007-cmd/sentry" target="_blank" rel="noopener">Read the code ↗</a></div></div>
+      <div><p class="wd-desc">Cargo risk scoring for customs. Fuses scanner imagery, declaration data and watchlists into a single 0 to 100 score per shipment, with the reason for every flag. Built at the Dubai Customs and University of Dubai hackathon.</p><div class="wd-chips"><span>0–100 risk score</span><span>2.3s per shipment</span><span>Explains every flag</span></div></div>
+    </div>
+    <div class="wd-stage" data-mode="live" data-src="https://ebinraj2007-cmd.github.io/sentry/" data-name="SENTRY"><div class="wd-bar"><span class="wd-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="wd-addr">ebinraj2007-cmd.github.io/sentry</span><span class="wd-live-dot"><i></i>Live</span><span class="wd-ctl"><button type="button" class="wd-w on" data-w="full" aria-pressed="true">Desktop</button><button type="button" class="wd-w" data-w="820" aria-pressed="false">Tablet</button><button type="button" class="wd-w" data-w="390" aria-pressed="false">Phone</button><button type="button" class="wd-re">Reload</button></span></div><div class="wd-view"><div class="wd-hold"><picture class="wd-pic"><source media="(max-width:620px)" srcset="img/web/sentry-phone.jpg" width="390" height="600"><img class="wd-poster" src="img/web/sentry-poster.jpg" alt="SENTRY home page" width="1280" height="800" loading="lazy" decoding="async"></picture><div class="wd-cta"><button type="button" class="wd-launch">Load the live site</button><span class="wd-hint">Runs the real site, right here</span></div></div><div class="wd-fail"><p>This one would not load inside the page. It is still up — open it in its own tab.</p><a href="https://ebinraj2007-cmd.github.io/sentry/" target="_blank" rel="noopener">Open SENTRY ↗</a></div></div></div>
+    
+  </article>
+  </div>
+  <p class="wd-foot rv">Before these: a 100-product WooCommerce store I built end to end for Best Pick Mart in Dubai, from 2024 to 2025 — storefront, payment gateway and on-page SEO, alongside running the shop. It is no longer online to link.</p>
+  <div class="wd-back rv"><a href="index.html">← Back to the portfolio</a></div>
+</div></section>
+
+<footer><div class="wrap in"><span>© Ebin Raj 2026</span><span>Sharjah, UAE</span><span>ebinraj2007@gmail.com</span></div></footer>
+<button id="snd"><span class="eq"><i></i><i></i><i></i></span> Sound off</button>
+
+<script src="site.js" defer></script>
+</body>
+</html>
