@@ -1,7 +1,4 @@
-const pc=document.getElementById('pc'),pre=document.getElementById('pre');
-  let p=0;const li=setInterval(()=>{p+=Math.floor(Math.random()*11)+6;if(p>=100){p=100;clearInterval(li);setTimeout(()=>pre.classList.add('done'),240);}pc.textContent=p+'%';},90);
-
-  const bar=document.getElementById('bar');
+const bar=document.getElementById('bar');
   addEventListener('scroll',()=>{const h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
 
   // parallax on hero (smooth)

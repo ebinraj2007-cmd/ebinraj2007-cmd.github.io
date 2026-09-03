@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-loading>
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -13,6 +13,117 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
+<style id="skcss">#skel{position:fixed;inset:0;z-index:1000;background:#f4f4f2;opacity:0;
+  animation:skfade .35s ease 120ms both}
+#skel.sk-dark{background:#0b0b0d}
+@keyframes skfade{to{opacity:1}}
+html.sk-done #skel{animation:none;opacity:0;visibility:hidden;transition:opacity .5s ease,visibility .5s}
+.sk-shell{position:absolute;inset:0;overflow:hidden}
+
+
+.sk{display:block;position:relative;overflow:hidden;border-radius:8px;background:#dbdbd6}
+.sk::after{content:"";position:absolute;inset:0;transform:translateX(-100%);
+  background:linear-gradient(90deg,rgba(255,255,255,0) 0,rgba(255,255,255,.85) 50%,rgba(255,255,255,0) 100%);
+  animation:skwave 2.4s cubic-bezier(.45,0,.25,1) infinite}
+@keyframes skwave{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+.sk-d1::after{animation-delay:.1s}.sk-d2::after{animation-delay:.2s}
+.sk-d3::after{animation-delay:.3s}.sk-d4::after{animation-delay:.4s}
+.sk-dark .sk{background:#212227}
+.sk-dark .sk::after{background:linear-gradient(90deg,rgba(255,255,255,0) 0,rgba(255,255,255,.14) 50%,rgba(255,255,255,0) 100%)}
+@media(prefers-reduced-motion:reduce){.sk::after{animation:none;opacity:.4;transform:none}}
+
+
+.sk-nav{position:absolute;top:14px;left:0;right:0;height:56px;z-index:6}
+.sk-nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between}
+.sk-navr{display:flex;align-items:center;gap:22px}
+
+
+.sk-hero{position:absolute;top:70px;left:0;right:0;height:100vh}
+.sk-hero .glass{display:block}
+.sk-hero .glass .h{margin-bottom:10px}
+.sk-hero .glass .rg{align-items:center;gap:12px}
+.sk-hero .hname{height:.78em;display:flex;align-items:center;justify-content:center}
+.sk-name{width:min(68%,990px);height:78%;border-radius:16px}
+@media(max-width:680px){.sk-hero .glass{display:none}}
+
+
+.sk-workbody{position:absolute;top:70px;left:0;right:0;bottom:0;background:#0b0b0d;padding:92px 0}
+@media(max-width:680px){.sk-workbody{padding:64px 0}}
+.sk-workbody .whead h2{margin:0}
+.sk-workbody .allnote{display:block}
+.sk-workbody .whead h2 .sk,.sk-workbody .allnote .sk{display:inline-block;vertical-align:middle}
+.sk-mob{display:none}
+@media(max-width:720px){.sk-mob{display:inline}}
+.sk-card{display:grid;grid-template-columns:52% 48%;min-height:511px;
+  border:1px solid rgba(255,255,255,.13);border-radius:16px;overflow:hidden}
+.sk-cardl{padding:52px 48px;display:flex;flex-direction:column;gap:14px;justify-content:center}
+.sk-cardr{background:#111214;border-left:1px solid rgba(255,255,255,.13)}
+@media(max-width:720px){
+  .sk-card{grid-template-columns:1fr;min-height:676px}
+  .sk-cardl{padding:30px 24px}
+  .sk-cardr{border-left:none;border-top:1px solid rgba(255,255,255,.13);min-height:200px}
+}
+
+
+.sk-notice{position:absolute;left:50%;bottom:56px;transform:translateX(-50%);width:min(340px,82vw);
+  text-align:center;opacity:0;transition:opacity .5s ease;pointer-events:none;z-index:8}
+html.sk-slow .sk-notice{opacity:1;pointer-events:auto}
+.sk-noticetxt{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6a6a6a}
+.sk-track{margin-top:12px;height:2px;background:rgba(0,0,0,.12);border-radius:2px;overflow:hidden}
+.sk-fill{height:100%;width:0;background:#ff3b30;transition:width .45s ease}
+.sk-skip{margin-top:16px;display:none;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:#6a6a6a;background:none;border:1px solid #e3e3e0;border-radius:999px;
+  padding:9px 16px;cursor:pointer;transition:border-color .25s,color .25s}
+.sk-skip:hover{border-color:#0e0e0e;color:#0e0e0e}
+html.sk-stuck .sk-skip{display:inline-block}
+.sk-dark .sk-noticetxt,.sk-dark .sk-skip{color:#8a8a8a}
+.sk-dark .sk-track{background:rgba(255,255,255,.14)}
+.sk-dark .sk-skip{border-color:rgba(255,255,255,.18)}</style>
+<script id="skjs">/* Skeleton loader. Runs from <head> before the stylesheet, so a slow
+   stylesheet cannot stop it. The skeleton itself needs no JS to appear:
+   CSS fades it in at 120ms. JS only ends it, and escalates when slow. */
+(function () {
+  var d = document.documentElement, t0 = Date.now(), finished = false;
+  var SHOW = 120, MIN_VISIBLE = 400, SLOW_AT = 3000, STUCK_AT = 8000, HARD_CAP = 20000;
+  var tSlow = setTimeout(function () { if (!finished) d.classList.add('sk-slow'); }, SLOW_AT);
+  var tStuck = setTimeout(function () { if (!finished) d.classList.add('sk-stuck'); }, STUCK_AT);
+  var tCap = setTimeout(finish, HARD_CAP);
+
+  function finish() {
+    if (finished) return;
+    finished = true;
+    clearTimeout(tSlow); clearTimeout(tStuck); clearTimeout(tCap);
+    var elapsed = Date.now() - t0;
+    var wait = elapsed < SHOW ? 0 : Math.max(0, SHOW + MIN_VISIBLE - elapsed);
+    setTimeout(function () {
+      d.classList.add('sk-done'); d.removeAttribute('data-loading');
+      setTimeout(function () {
+        var s = document.getElementById('skel');
+        if (s && s.parentNode) s.parentNode.removeChild(s);
+      }, 700);
+    }, wait);
+  }
+
+  document.addEventListener('click', function (e) {
+    for (var t = e.target; t && t.classList; t = t.parentNode)
+      if (t.classList.contains('sk-skip')) { finish(); return; }
+  }, true);
+
+  function wire() {
+    var s = document.getElementById('skel'); if (!s) return;
+    var fill = s.querySelector('.sk-fill');
+    var imgs = [].slice.call(document.images);
+    var total = imgs.length + 2, done = 0;
+    function step() { done++; if (fill) fill.style.width = Math.min(100, Math.round(done / total * 100)) + '%'; }
+    imgs.forEach(function (im) {
+      if (im.complete) step();
+      else { im.addEventListener('load', step, { once: true }); im.addEventListener('error', step, { once: true }); }
+    });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(step); else step();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire); else wire();
+  if (document.readyState === 'complete') finish(); else window.addEventListener('load', finish, { once: true });
+})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -20,7 +131,23 @@
 </head>
 <body>
 
-<div id="pre"><div class="nm">Ebin Raj</div><div class="pc" id="pc">0%</div></div>
+<div id="skel">
+  <div class="sk-shell" aria-hidden="true">
+    <div class="sk-nav"><div class="wrap"><span class="sk sk-d1" style="width:107px;height:15px"></span><span class="sk-navr"><span class="sk sk-d2" style="width:38px;height:11px"></span><span class="sk sk-d3" style="width:46px;height:11px"></span><span class="sk sk-d4" style="width:132px;height:35px;border-radius:2px"></span></span></div></div>
+    <div class="sk-hero">
+      <div class="htag"><span class="sk sk-d1" style="width:212px;height:12px"></span></div>
+      <div class="glass"><div class="h"><span class="sk sk-d1" style="width:88px;height:10px"></span></div><div class="rg"><span class="sk sk-d2" style="width:58px;height:9px"></span><span class="sk sk-d2" style="width:76px;height:9px"></span></div><div class="rg"><span class="sk sk-d3" style="width:58px;height:9px"></span><span class="sk sk-d3" style="width:76px;height:9px"></span></div><div class="rg"><span class="sk sk-d4" style="width:58px;height:9px"></span><span class="sk sk-d4" style="width:76px;height:9px"></span></div></div>
+      <div class="hname"><span class="sk sk-name"></span></div>
+      <div class="hfoot"><span class="sk sk-d3" style="width:193px;height:12px"></span></div>
+      <div class="hscroll"><span class="sk sk-d4" style="width:64px;height:12px"></span></div>
+    </div>
+  </div>
+  <div class="sk-notice" role="status" aria-live="polite">
+    <div class="sk-noticetxt">Still loading</div>
+    <div class="sk-track"><div class="sk-fill"></div></div>
+    <button type="button" class="sk-skip">Show the page anyway</button>
+  </div>
+</div>
 <div id="bar"></div>
 
 <nav><div class="wrap in">
