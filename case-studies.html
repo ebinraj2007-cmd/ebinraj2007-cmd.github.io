@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" data-loading>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="theme-color" content="#f4f4f2" />
+<title>Case studies — Ebin Raj, UX &amp; Product Designer</title>
+<meta name="description" content="Three end-to-end UX case studies by Ebin Raj — the research, the design decisions it produced, what usability testing changed, and what shipped." />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="logo.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+<style id="skcss">#skel{position:fixed;inset:0;z-index:1000;background:#f4f4f2;opacity:0;
+  animation:skfade .35s ease 120ms both}
+#skel.sk-dark{background:#0b0b0d}
+@keyframes skfade{to{opacity:1}}
+html.sk-done #skel{animation:none;opacity:0;visibility:hidden;transition:opacity .5s ease,visibility .5s}
+.sk-shell{position:absolute;inset:0;overflow:hidden}
+
+
+.sk{display:block;position:relative;overflow:hidden;border-radius:8px;background:#dbdbd6}
+.sk::after{content:"";position:absolute;inset:0;transform:translateX(-100%);
+  background:linear-gradient(90deg,rgba(255,255,255,0) 0,rgba(255,255,255,.85) 50%,rgba(255,255,255,0) 100%);
+  animation:skwave 2.4s cubic-bezier(.45,0,.25,1) infinite}
+@keyframes skwave{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+.sk-d1::after{animation-delay:.1s}.sk-d2::after{animation-delay:.2s}
+.sk-d3::after{animation-delay:.3s}.sk-d4::after{animation-delay:.4s}
+.sk-dark .sk{background:#212227}
+.sk-dark .sk::after{background:linear-gradient(90deg,rgba(255,255,255,0) 0,rgba(255,255,255,.14) 50%,rgba(255,255,255,0) 100%)}
+@media(prefers-reduced-motion:reduce){.sk::after{animation:none;opacity:.4;transform:none}}
+
+
+.sk-nav{position:absolute;top:14px;left:0;right:0;height:56px;z-index:6}
+.sk-nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between}
+@media(max-width:620px){.sk-navr .sk-nlink{display:none}}
+
+.sk-navr{display:flex;align-items:center;gap:22px}
+
+
+.sk-hero{position:absolute;top:70px;left:0;right:0;height:100vh}
+.sk-hero .glass{display:block}
+.sk-hero .glass .h{margin-bottom:10px}
+.sk-hero .glass .rg{align-items:center;gap:12px}
+.sk-hero .hname{height:.78em;display:flex;align-items:center;justify-content:center}
+.sk-name{width:min(68%,990px);height:78%;border-radius:16px}
+@media(max-width:680px){.sk-hero .glass{display:none}}
+
+
+.sk-workbody{position:absolute;top:70px;left:0;right:0;bottom:0;background:#0b0b0d;padding:92px 0}
+@media(max-width:680px){.sk-workbody{padding:64px 0}}
+.sk-workbody .whead h2{margin:0}
+.sk-workbody .allnote{display:block}
+.sk-workbody .whead h2 .sk,.sk-workbody .allnote .sk{display:inline-block;vertical-align:middle}
+.sk-mob{display:none}
+@media(max-width:720px){.sk-mob{display:inline}}
+.sk-card{display:grid;grid-template-columns:52% 48%;min-height:511px;
+  border:1px solid rgba(255,255,255,.13);border-radius:16px;overflow:hidden}
+.sk-cardl{padding:52px 48px;display:flex;flex-direction:column;gap:14px;justify-content:center}
+.sk-cardr{background:#111214;border-left:1px solid rgba(255,255,255,.13)}
+@media(max-width:720px){
+  .sk-card{grid-template-columns:1fr;min-height:676px}
+  .sk-cardl{padding:30px 24px}
+  .sk-cardr{border-left:none;border-top:1px solid rgba(255,255,255,.13);min-height:200px}
+}
+
+
+.sk-notice{position:absolute;left:50%;bottom:56px;transform:translateX(-50%);width:min(340px,82vw);
+  text-align:center;opacity:0;transition:opacity .5s ease;pointer-events:none;z-index:8}
+html.sk-slow .sk-notice{opacity:1;pointer-events:auto}
+.sk-noticetxt{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6a6a6a}
+.sk-track{margin-top:12px;height:2px;background:rgba(0,0,0,.12);border-radius:2px;overflow:hidden}
+.sk-fill{height:100%;width:0;background:#ff3b30;transition:width .45s ease}
+.sk-skip{margin-top:16px;display:none;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:#6a6a6a;background:none;border:1px solid #e3e3e0;border-radius:999px;
+  padding:9px 16px;cursor:pointer;transition:border-color .25s,color .25s}
+.sk-skip:hover{border-color:#0e0e0e;color:#0e0e0e}
+html.sk-stuck .sk-skip{display:inline-block}
+.sk-dark .sk-noticetxt,.sk-dark .sk-skip{color:#8a8a8a}
+.sk-dark .sk-track{background:rgba(255,255,255,.14)}
+.sk-dark .sk-skip{border-color:rgba(255,255,255,.18)}</style>
+<script id="skjs">/* Skeleton loader. Runs from <head> before the stylesheet, so a slow
+   stylesheet cannot stop it. The skeleton itself needs no JS to appear:
+   CSS fades it in at 120ms. JS only ends it, and escalates when slow. */
+(function () {
+  var d = document.documentElement, t0 = Date.now(), finished = false;
+  var SHOW = 120, MIN_VISIBLE = 400, SLOW_AT = 3000, STUCK_AT = 8000, HARD_CAP = 20000;
+  var tSlow = setTimeout(function () { if (!finished) d.classList.add('sk-slow'); }, SLOW_AT);
+  var tStuck = setTimeout(function () { if (!finished) d.classList.add('sk-stuck'); }, STUCK_AT);
+  var tCap = setTimeout(finish, HARD_CAP);
+
+  function finish() {
+    if (finished) return;
+    finished = true;
+    clearTimeout(tSlow); clearTimeout(tStuck); clearTimeout(tCap);
+    var elapsed = Date.now() - t0;
+    var wait = elapsed < SHOW ? 0 : Math.max(0, SHOW + MIN_VISIBLE - elapsed);
+    setTimeout(function () {
+      d.classList.add('sk-done'); d.removeAttribute('data-loading');
+      setTimeout(function () {
+        var s = document.getElementById('skel');
+        if (s && s.parentNode) s.parentNode.removeChild(s);
+      }, 700);
+    }, wait);
+  }
+
+  document.addEventListener('click', function (e) {
+    for (var t = e.target; t && t.classList; t = t.parentNode)
+      if (t.classList.contains('sk-skip')) { finish(); return; }
+  }, true);
+
+  function wire() {
+    var s = document.getElementById('skel'); if (!s) return;
+    var fill = s.querySelector('.sk-fill');
+    var imgs = [].slice.call(document.images);
+    var total = imgs.length + 2, done = 0;
+    function step() { done++; if (fill) fill.style.width = Math.min(100, Math.round(done / total * 100)) + '%'; }
+    imgs.forEach(function (im) {
+      if (im.complete) step();
+      else { im.addEventListener('load', step, { once: true }); im.addEventListener('error', step, { once: true }); }
+    });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(step); else step();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire); else wire();
+  if (document.readyState === 'complete') finish(); else window.addEventListener('load', finish, { once: true });
+})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<div id="skel" class="sk-dark">
+  <div class="sk-shell" aria-hidden="true">
+    <div class="sk-nav"><div class="wrap"><span class="sk sk-d1" style="width:107px;height:15px"></span><span class="sk-navr"><span class="sk sk-d2 sk-nlink" style="width:38px;height:11px"></span><span class="sk sk-d3 sk-nlink" style="width:33px;height:11px"></span><span class="sk sk-d3 sk-nlink" style="width:46px;height:11px"></span><span class="sk sk-d4" style="width:132px;height:35px;border-radius:2px"></span></span></div></div>
+    <div class="sk-workbody sec"><div class="wrap">
+      <div class="whead"><h2><span class="sk sk-d1" style="width:min(144px,62vw);height:.62em"></span></h2></div>
+      <p class="allnote"><span class="sk sk-d2" style="width:min(568px,86%);height:12px"></span><br><span class="sk sk-d3" style="width:min(430px,64%);height:12px"></span><span class="sk-mob"><br><span class="sk sk-d4" style="width:78%;height:12px"></span><br><span class="sk sk-d1" style="width:44%;height:12px"></span></span></p>
+      <div class="pcards"><div class="sk-card"><div class="sk-cardl"><span class="sk sk-d1" style="width:96px;height:11px"></span><span class="sk sk-d2" style="width:70%;height:27px"></span><span class="sk sk-d3" style="width:100%;height:12px"></span><span class="sk sk-d3" style="width:86%;height:12px"></span><span class="sk sk-d4" style="width:52%;height:12px"></span></div><div class="sk-cardr"></div></div></div>
+    </div></div>
+  </div>
+  <div class="sk-notice" role="status" aria-live="polite">
+    <div class="sk-noticetxt">Still loading</div>
+    <div class="sk-track"><div class="sk-fill"></div></div>
+    <button type="button" class="sk-skip">Show the page anyway</button>
+  </div>
+</div>
+<div id="bar"></div>
+
+<nav><div class="wrap in">
+  <a class="brand" href="index.html"><i></i> EBIN RAJ</a>
+  <div class="nl"><a href="index.html">Home</a><a href="work.html">Work</a><a href="web.html">Web</a><a href="index.html#about">About</a><a class="cta" href="index.html#contact">Get in touch</a></div>
+</div></nav>
+<style>
+  .csw{background:var(--bg);padding:96px 0 40px}
+  .cshead{max-width:820px;margin-bottom:64px}
+  .cshead h1{font-size:clamp(38px,7vw,76px);margin:14px 0 20px}
+  .cshead p{color:var(--faint);font-size:17px;max-width:640px}
+  .cs{border-top:1px solid var(--line);padding:64px 0}
+  .cs:last-of-type{border-bottom:1px solid var(--line)}
+  .csgrid{display:grid;grid-template-columns:250px 1fr;gap:56px;align-items:start}
+  @media(max-width:860px){.csgrid{grid-template-columns:1fr;gap:28px}}
+  .csside{position:sticky;top:96px}
+  @media(max-width:860px){.csside{position:static}}
+  .csnum{font-family:'Space Mono',monospace;font-size:12px;color:var(--acc);letter-spacing:.16em}
+  .csside h2{font-size:30px;margin:10px 0 14px}
+  .csmeta{border-top:1px solid var(--line);padding-top:14px;margin-top:16px}
+  .csmeta div{display:flex;justify-content:space-between;gap:14px;font-size:12.5px;
+    padding:5px 0;color:var(--faint)}
+  .csmeta div b{color:var(--text);font-weight:500;text-align:right}
+  .csbody{max-width:680px}
+  .cslede{font-size:19px;line-height:1.55;margin-bottom:34px;color:var(--text)}
+  .csstep{margin-bottom:30px}
+  .csstep > .lbl{display:block;margin-bottom:9px}
+  .csstep p{color:#3a3a3a;margin-bottom:11px}
+  .csstep p:last-child{margin-bottom:0}
+  .csquote{border-left:2px solid var(--acc);padding:4px 0 4px 18px;margin:18px 0;
+    font-size:17px;line-height:1.5}
+  .csout{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-top:26px}
+  .csout .lbl{display:block;margin-bottom:12px}
+  .csout ul{list-style:none}
+  .csout li{position:relative;padding-left:16px;margin-bottom:7px;font-size:14.5px}
+  .csout li:last-child{margin-bottom:0}
+  .csout li::before{content:"";position:absolute;left:0;top:8px;width:4px;height:4px;background:var(--acc)}
+  .csback{padding:56px 0 24px}
+  .csback a{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--faint);border-bottom:1px solid var(--line);padding-bottom:3px}
+  .csback a:hover{color:var(--text);border-color:var(--text)}
+</style>
+
+<section class="csw">
+  <div class="wrap">
+    <div class="cshead rv">
+      <span class="lbl">Case studies</span>
+      <h1>How the work<br>actually happened.</h1>
+      <p>Three projects in full — the research, the design decisions it forced, what usability testing changed, and what I would do differently. The outcomes are on the work page; this is the reasoning behind them.</p>
+    </div>
+  <article class="cs rv">
+   <div class="csgrid">
+    <div class="csside">
+      <div class="csnum">CASE 01</div>
+      <h2>Wave Fest</h2>
+      <div class="csmeta"><div><span>Role</span><b>Sole designer</b></div><div><span>Type</span><b>Client engagement</b></div><div><span>Year</span><b>2026</b></div><div><span>Built with</span><b>Figma, React, Supabase</b></div><div><span>Status</span><b>Live</b></div></div>
+    </div>
+    <div class="csbody">
+      <p class="cslede">A UAE yacht charter operator was getting traffic but losing enquiries. I was brought in to redesign the booking experience, and ended up redesigning how the business runs it.</p>
+    <div class="csstep"><span class="lbl">Context</span>
+      <p>The operator sells charters that start around a few thousand dirhams. Every booking begins as an enquiry, so the entire business depends on a visitor being willing to start a conversation. The existing site described the boats accurately and still converted badly.</p>
+    </div>
+    <div class="csstep"><span class="lbl">Research</span>
+      <p>I interviewed the owner and the staff who answer enquiries, because they were the only people who could tell me where conversations actually died. That turned out to matter more than anything I could infer from the site itself.</p>
+      <p>Two things came out of it. Customers repeatedly asked the same questions before they were willing to enquire, and the answers were not on the page. And the owner could not change a price or a tour without paying someone — so the content was quietly going stale, which made the site less accurate the longer it stayed up.</p>
+    </div>
+    <div class="csstep"><span class="lbl">The design problem</span>
+      <p>I had framed this as a layout problem when I arrived. It was not. It was an information problem on the customer side and a maintenance problem on the business side, and the second one was slowly causing the first.</p>
+    </div>
+    <div class="csstep"><span class="lbl">Design decisions</span>
+      <p>I designed the journey around the questions people actually asked rather than the structure of the old site, and made pricing transparent at the point of interest instead of on request — the single-price quote removed a round trip that the staff told me people rarely came back from.</p>
+      <p>I placed a knowledge-base chat assistant at the moment of hesitation rather than in a corner of every page, so it answers the specific question standing between someone and an enquiry.</p>
+      <p>The admin dashboard and content editor were designed so a non-technical owner can publish a price change without a developer. That was a design decision about who holds the keys, not a feature request.</p>
+    </div>
+    <div class="csstep"><span class="lbl">Testing</span>
+      <p>Before launch I ran usability sessions on the booking flow with the client and with people using it for the first time. I watched where they slowed down rather than asking whether they liked it.</p>
+      <p>The hesitation clustered in the middle of the enquiry path, on steps I had considered necessary. I cut them. The flow shipped shorter than I designed it, which is the part of this project I am most pleased about.</p>
+    </div>
+    <div class="csstep"><span class="lbl">What I would do differently</span>
+      <p>I would test the admin side with the same rigour as the customer side. I designed the content editor carefully but validated it far less than the booking flow, and the owner is the person who has to live in it every week.</p>
+    </div>
+      <div class="csout"><span class="lbl">What shipped</span><ul><li>An enquiry journey shortened after testing, with transparent single-price quoting</li><li>An admin dashboard and content editor the owner uses without a developer</li><li>A knowledge-base chat assistant placed at the point of hesitation</li><li>Live, and maintained by the client themselves</li></ul></div>
+    </div>
+   </div>
+  </article>
+  <article class="cs rv">
+   <div class="csgrid">
+    <div class="csside">
+      <div class="csnum">CASE 02</div>
+      <h2>Stem by Stem</h2>
+      <div class="csmeta"><div><span>Role</span><b>Sole designer</b></div><div><span>Type</span><b>Consumer product</b></div><div><span>Year</span><b>2026</b></div><div><span>Built with</span><b>Stripe, Arabic RTL, dark mode</b></div><div><span>Status</span><b>Live demo</b></div></div>
+    </div>
+    <div class="csbody">
+      <p class="cslede">An online flower shop where browsing the catalogue was the thing stopping people from buying. The fix was not a better catalogue.</p>
+    <div class="csstep"><span class="lbl">Research</span>
+      <p>I watched people shop. The blocker showed up almost immediately and it was not what I expected: they knew the occasion and they knew the feeling they wanted to convey, but they did not know what to order. They were being asked to choose between roses and eucalyptus when the thing in their head was an apology.</p>
+    </div>
+    <p class="csquote">Category-first navigation asks the customer to already know the answer. These customers knew the question.</p>
+    <div class="csstep"><span class="lbl">Design decisions</span>
+      <p>I designed a second entry point rather than replacing the first. The customer describes the feeling in their own words and the interface composes the bouquet from it; the stem-by-stem manual path stays for people who would rather control every element. Removing choice from someone who wants it is as bad as demanding it from someone who does not.</p>
+      <p>Arabic right-to-left layout and dark mode were designed from the first screen rather than retrofitted. Retrofitting RTL means discovering every hard-coded assumption about direction at the worst possible moment, and it shows in the result.</p>
+      <p>For checkout I stayed deliberately conventional — cart, Stripe, sign-in, same-day delivery selection across the seven emirates. The novelty belongs in discovery, where the customer is undecided. At payment, familiarity is the feature.</p>
+    </div>
+    <div class="csstep"><span class="lbl">What I would do differently</span>
+      <p>I would test the described-feeling path against the catalogue path properly, with the same people on the same task, instead of trusting that the observation generalised. I believe it does. I did not prove it.</p>
+    </div>
+      <div class="csout"><span class="lbl">What shipped</span><ul><li>Two discovery paths: describe a feeling, or build stem by stem</li><li>Full Arabic RTL and dark mode, designed in from the start</li><li>Cart, Stripe checkout, sign-in and same-day delivery across seven emirates</li><li>A conventional checkout, on purpose</li></ul></div>
+    </div>
+   </div>
+  </article>
+  <article class="cs rv">
+   <div class="csgrid">
+    <div class="csside">
+      <div class="csnum">CASE 03</div>
+      <h2>Barjeel</h2>
+      <div class="csmeta"><div><span>Role</span><b>Sole designer</b></div><div><span>Type</span><b>Trust &amp; safety</b></div><div><span>Year</span><b>2026</b></div><div><span>Built with</span><b>On-device, 20 checks, 81 tests</b></div><div><span>Status</span><b>Live</b></div></div>
+    </div>
+    <div class="csbody">
+      <p class="cslede">A QR scanner that tells you where a code really leads. The hard part was not detecting the attack — it was writing the warning.</p>
+    <div class="csstep"><span class="lbl">The design problem</span>
+      <p>A malicious QR code is invisible by design. A lookalike domain, a punycode homograph, a mixed-script substitution — all of them are engineered to survive a glance. The detection is solvable in code. The design problem is telling someone with no technical vocabulary that the thing they are about to open is not what it claims to be, in the two seconds they will give you.</p>
+    </div>
+    <div class="csstep"><span class="lbl">Design decisions</span>
+      <p>The strictest decision was what the product refuses to do: it never opens a link on the user's behalf. A safety tool that navigates for you has to be right every time, and nothing is right every time.</p>
+      <p>It runs entirely on the device. Nothing the user scans leaves their phone — which also means the product cannot quietly become a log of everywhere they have been.</p>
+      <p>The warning shows what the domain claims to be alongside what it actually is, because the gap between those two is the whole story and it is more persuasive than any severity label.</p>
+    </div>
+    <div class="csstep"><span class="lbl">Testing</span>
+      <p>I tested the warning screens with non-technical users, and the question was narrow: without me explaining anything, do you know what this is telling you and what you should do?</p>
+      <p>The first wording failed that test. It was accurate and useless — it described the mechanism instead of the consequence. I rewrote it around what it means for the person holding the phone, and kept testing until the danger landed without explanation.</p>
+    </div>
+    <div class="csstep"><span class="lbl">What I would do differently</span>
+      <p>I would test the safe case harder than the dangerous one. A scanner that makes people anxious about legitimate codes has failed differently, but it has still failed, and I spent most of my attention on the warning state.</p>
+    </div>
+      <div class="csout"><span class="lbl">What shipped</span><ul><li>Danger states written for non-technical users and tested for comprehension</li><li>Detection for lookalike domains, punycode and mixed-script attacks — 20 checks</li><li>Fully offline: nothing about the user leaves the device</li><li>Never opens a link on the user's behalf</li></ul></div>
+    </div>
+   </div>
+  </article>
+    <div class="csback rv"><a href="index.html">← Back to the portfolio</a></div>
+  </div>
+</section>
+
+<footer><div class="wrap in"><span>© Ebin Raj 2026</span><span>Sharjah, UAE</span><span>ebinraj2007@gmail.com</span></div></footer>
+<button id="snd"><span class="eq"><i></i><i></i><i></i></span> Sound off</button>
+
+<script src="site.js" defer></script>
+</body>
+</html>
